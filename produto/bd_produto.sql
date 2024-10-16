@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15-Maio-2024 às 18:49
+-- Tempo de geração: 16-Out-2024 às 18:35
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.0.13
 
@@ -19,10 +19,9 @@ SET time_zone = "+00:00";
 
 --
 -- Banco de dados: `bd_produto`
-CREATE database `bd_produto`;
-USE `bd_produto`;
 --
-
+CREATE DATABASE `bd_produto`;
+USE `bd_produto`;
 -- --------------------------------------------------------
 
 --
@@ -45,6 +44,25 @@ INSERT INTO `produto` (`id`, `nome`, `estoque`) VALUES
 (3, 'Tênis', 80),
 (4, 'Boné', 120),
 (5, 'Jaqueta', 30);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `login` varchar(5) NOT NULL,
+  `senha` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`login`, `senha`) VALUES
+('a', 123),
+('b', 456);
 
 --
 -- Índices para tabelas despejadas
