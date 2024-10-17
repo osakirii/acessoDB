@@ -8,7 +8,7 @@
         <title>Listar Autor</title>
     </head>
     <body bgcolor="black">
-        <center><font face = "Century Gothic" size = 6 style="color: #a370f0;;"><b><u>Relação de Produtos Cadastrados</u></b><br><br><br><font size = 4 style="color: white;">
+        <center><font face = "Century Gothic" size = 6 style="color: #a370f0;;"><b><u>Relação de Livros Cadastrados</u></b><br><br><br><font size = 4 style="color: white;">
         <?php
 
             include_once 'modelos/livro.php';

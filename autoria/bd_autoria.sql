@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16/05/2024 às 20:04
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
+-- Tempo de geração: 17-Out-2024 às 20:02
+-- Versão do servidor: 10.4.22-MariaDB
+-- versão do PHP: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -19,14 +19,15 @@ SET time_zone = "+00:00";
 
 --
 -- Banco de dados: `bd_autoria`
-CREATE database `bd_autoria`;
-USE `bd_autoria`;
 --
+
+CREATE DATABASE `bd_autoria`;
+USE `bd_autoria`;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `autor`
+-- Estrutura da tabela `autor`
 --
 
 CREATE TABLE `autor` (
@@ -35,10 +36,10 @@ CREATE TABLE `autor` (
   `sobrenome` varchar(15) NOT NULL,
   `email` varchar(50) NOT NULL,
   `nasc` date NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `autor`
+-- Extraindo dados da tabela `autor`
 --
 
 INSERT INTO `autor` (`cod_autor`, `nomeAutor`, `sobrenome`, `email`, `nasc`) VALUES
@@ -53,7 +54,7 @@ INSERT INTO `autor` (`cod_autor`, `nomeAutor`, `sobrenome`, `email`, `nasc`) VAL
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `autoria`
+-- Estrutura da tabela `autoria`
 --
 
 CREATE TABLE `autoria` (
@@ -61,10 +62,10 @@ CREATE TABLE `autoria` (
   `cod_autor` int(11) NOT NULL,
   `dataLancamento` date NOT NULL,
   `editora` varchar(30) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `autoria`
+-- Extraindo dados da tabela `autoria`
 --
 
 INSERT INTO `autoria` (`cod_livro`, `cod_autor`, `dataLancamento`, `editora`) VALUES
@@ -80,7 +81,7 @@ INSERT INTO `autoria` (`cod_livro`, `cod_autor`, `dataLancamento`, `editora`) VA
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `livro`
+-- Estrutura da tabela `livro`
 --
 
 CREATE TABLE `livro` (
@@ -90,10 +91,10 @@ CREATE TABLE `livro` (
   `isbn` varchar(13) NOT NULL,
   `idioma` varchar(10) NOT NULL,
   `qtdePag` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `livro`
+-- Extraindo dados da tabela `livro`
 --
 
 INSERT INTO `livro` (`cod_livro`, `titulo`, `categoria`, `isbn`, `idioma`, `qtdePag`) VALUES
@@ -103,24 +104,43 @@ INSERT INTO `livro` (`cod_livro`, `titulo`, `categoria`, `isbn`, `idioma`, `qtde
 (4, 'O Senhor dos Anéis', 'Fantasia', '978-85-325-04', 'Português', 1184),
 (5, 'Harry Potter e a Pedra Filosofal', 'Fantasia', '978-85-325-07', 'Português', 309);
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `login` varchar(5) NOT NULL,
+  `senha` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`login`, `senha`) VALUES
+('a', 123),
+('b', 456);
+
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `autor`
+-- Índices para tabela `autor`
 --
 ALTER TABLE `autor`
   ADD PRIMARY KEY (`cod_autor`);
 
 --
--- Índices de tabela `livro`
+-- Índices para tabela `livro`
 --
 ALTER TABLE `livro`
   ADD PRIMARY KEY (`cod_livro`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --

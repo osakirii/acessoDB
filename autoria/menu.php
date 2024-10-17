@@ -6,7 +6,7 @@
     </head>
     <body bgcolor="black">
         
-        <center><font face = "Century Gothic" size = 6 style="color: #a370f0;"><b><u> Menu: Produtos </u></b><br><br><br></font>
+        <center><font face = "Century Gothic" size = 6 style="color: #a370f0;"><b><u> Menu: Autoria </u></b><br><br><br></font>
 
             <a href="listarAutor.php"><button class="cssbuttons-io-button">
               Listar Autores
