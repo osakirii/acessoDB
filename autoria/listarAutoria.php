@@ -1,14 +1,17 @@
+<?php 
+    require_once 'header.php';
+?>
+
 <html>
     <head>
         <meta charset = "UTF-8">
         <title>Listar Autoria</title>
-        <link rel="stylesheet" type="text/css" href="../menu.css">
     </head>
     <body bgcolor="black">
         <center><font face = "Century Gothic" size = 6 style="color: #a370f0;;"><b><u>Relação de Produtos Cadastrados</u></b><br><br><br><font size = 4 style="color: white;">
         <?php
 
-            include_once 'autoria.php';
+            include_once 'modelos/autoria.php';
             $ai = new Autoria();
             $aut_bd = $ai->Listar();
         ?>
@@ -29,7 +32,7 @@
         ?>
 
             <br><br>
-        <a href="menu.html"><button class="cssbuttons-io-button">
+        <a href="menu.php"><button class="cssbuttons-io-button">
                 Voltar
                 <div class="icon">
                 <svg

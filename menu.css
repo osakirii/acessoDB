@@ -51,4 +51,68 @@
   .cssbuttons-io-button:active .icon {
     transform: scale(0.95);
   }
-  
+
+  body{
+    background-image: linear-gradient(rgb(24, 23, 23), rgb(48, 48, 48));
+  }
+
+  main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu{
+    display: flex;
+    align-items: center;
+    height: 600px;
+    width: 600px;
+    flex-flow: column wrap;
+  }
+
+  .login{
+    background: #a370f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: white;
+    border-radius: 40px;
+    box-shadow: 5px 5px 20px black;
+    position: relative;
+  }
+
+  .login .cssbuttons-io-button{
+    position: absolute;
+    bottom: 100px;
+  }
+
+  .login input{
+    outline: 0;
+    border: 1px solid white;
+    border-radius: 8px;
+    font-size: 20px;
+
+  }
+
+  .login a{
+    text-decoration: none;
+  }
+
+  .login .entrarButton{
+    padding: 10px 40px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background: white;
+    color: #a370f0;
+    font-size: 20px;
+    transition: 0.3s;
+
+    &:hover{
+      transform: translateY(-5px);
+      background: #a370f0;
+      color: white;
+    }
+
+    &:active{
+      background: #7339ca;
+    }
+  }

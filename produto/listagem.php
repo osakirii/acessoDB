@@ -1,11 +1,17 @@
+<?php
+    require_once 'header.php';
+?>
+
 <html>
     <head>
         <meta charset = "UTF-8">
         <title>Listar Produto</title>
-        <link rel="stylesheet" type="text/css" href="menu.css">
+        <link rel="stylesheet" type="text/css" href=",,/menu.css">
     </head>
     <body bgcolor="black">
         <center><font face = "Century Gothic" size = 6 style="color: #a370f0;;"><b><u>Relação de Produtos Cadastrados</u></b><br><br><br><font size = 4 style="color: white;">
+        <main><div class="menu">
+        
         <?php
 
             include_once 'modelos/produto.php';
@@ -18,17 +24,17 @@
         <?php
 
             foreach($pro_bd as $pro_mostrar)
-            {       
+            {
                 echo '<br><br>';
 
-                echo'<b>'.$pro_mostrar[0].'</b>&nbsp;&nbsp;&nbsp;&nbsp;';
+                echo $pro_mostrar[0].' &nbsp;&nbsp;&nbsp;&nbsp;';
                 echo $pro_mostrar[1]. "&nbsp;&nbsp;&nbsp;&nbsp;";
                 echo $pro_mostrar[2]. "&nbsp;&nbsp;&nbsp;&nbsp;";
             }
         ?>
 
             <br><br>
-        <a href="menu.html"><button class="cssbuttons-io-button">
+        <a href="menu.php"><button class="cssbuttons-io-button">
                 Voltar
                 <div class="icon">
                 <svg
@@ -46,5 +52,6 @@
                 </div>
             </button>
             </a>
+        </div></main>
     </body>
 </html>

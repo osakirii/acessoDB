@@ -1,8 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../menu.css">
     <title>Login</title>
     <script>
             function blockletras(keypress) {
@@ -15,10 +15,27 @@
     </script>
 </head>
 <body>
+    <main style="height: 100%;"><div class="menu login">
     <form method="post">
-        Login: <input type="text" name="txtlogin" required maxlength="5"><br>
-        Senha: <input type="password" name="txtsenha" required maxlength="3" onkeypress="return blockletras(window.event.keyCode)">
-        <button type="submit" name="acessar">Acessar</button>
+       <p> Login: </p><input type="text" name="txtlogin" required maxlength="5"><br>
+       <p> Senha: </p><input type="password" name="txtsenha" required maxlength="3" onkeypress="return blockletras(window.event.keyCode)"><br><br><br>
+        <button class="cssbuttons-io-button" type="submit" name="acessar">
+          Acessar
+          <div class="icon">
+            <svg
+              height="24"
+              width="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </button>
     </form>
 
     <?php
@@ -29,21 +46,20 @@
             $usr->setUser($txtlogin);
             $usr->setSenha($txtsenha);
             $pro_bd = $usr->logar();
-            var_dump($pro_bd);
 
             $existe = false;
             foreach($pro_bd as $pro_mostrar){
                 $existe = true;
                 ?>
                 <br><b><?php echo "Bem vindo! Usuário: " .$pro_mostrar[0]; ?></b><br><br>
-                <button name="btnentrar"><a href="menu.html">Entrar</a></button>
+                <a href="menu.php"><button name="btnentrar" class="entrarButton">Entrar</button></a>
                 <?php
             }
             if($existe = false){
-                header("location:loginInvalido.html");
+                header("location:loginInvalido.php");
             }
-
         }
     ?>
+        </div></main>
 </body>
 </html>
