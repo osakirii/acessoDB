@@ -62,6 +62,16 @@
     align-items: center;
   }
 
+  fieldset{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  fieldset button{
+    margin: 10px;
+  }
+
   .menu{
     display: flex;
     align-items: center;
@@ -110,6 +120,7 @@
       transform: translateY(-5px);
       background: #a370f0;
       color: white;
+      cursor: pointer;
     }
 
     &:active{

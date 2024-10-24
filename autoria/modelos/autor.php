@@ -75,5 +75,23 @@
             echo "Erro ao executar consulta. " . $exc->getMessage();
         }
     }
+
+	function exclusao(){
+		try{
+			$this->conn = new Conectar();
+			$sql =  $this->conn->prepare("DELETE from autor WHERE cod_autor = ?");
+			@$sql->bindParam(1, $this->getCod_autor(), PDO::PARAM_STR);
+			if($sql->execute() == 1){
+				return "Excluído com sucesso!";
+			} else {
+				return "Erro na exclusão!";
+			}
+			$this->conn = null;
+
+		} catch (PDOException $exc){
+			echo "Erro ao excluir. " . $exc->getMessage();
+		}
+
+	}
 }
 ?>

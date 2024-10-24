@@ -54,5 +54,23 @@
                 echo "Erro ao executar consulta. " . $exc->getMessage();
             }
         }
+
+        function exclusao(){
+            try{
+                $this->conn = new Conectar();
+                $sql =  $this->conn->prepare("DELETE from produto WHERE id = ?");
+                @$sql->bindParam(1, $this->getId(), PDO::PARAM_STR);
+                if($sql->execute() == 1){
+                    return "Excluído com sucesso!";
+                } else {
+                    return "Erro na exclusão!";
+                }
+                $this->conn = null;
+
+            } catch (PDOException $exc){
+                echo "Erro ao excluir. " . $exc->getMessage();
+            }
+
+        }
     }
 ?>

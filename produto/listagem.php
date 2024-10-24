@@ -6,7 +6,6 @@
     <head>
         <meta charset = "UTF-8">
         <title>Listar Produto</title>
-        <link rel="stylesheet" type="text/css" href=",,/menu.css">
     </head>
     <body bgcolor="black">
         <center><font face = "Century Gothic" size = 6 style="color: #a370f0;;"><b><u>Relação de Produtos Cadastrados</u></b><br><br><br><font size = 4 style="color: white;">

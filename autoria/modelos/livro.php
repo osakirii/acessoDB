@@ -88,5 +88,23 @@
             echo "Erro ao executar consulta. " . $exc->getMessage();
         }
     }
+
+	function exclusao(){
+		try{
+			$this->conn = new Conectar();
+			$sql =  $this->conn->prepare("DELETE from livro WHERE cod_livro = ?");
+			@$sql->bindParam(1, $this->getCod_livro(), PDO::PARAM_STR);
+			if($sql->execute() == 1){
+				return "Excluído com sucesso!";
+			} else {
+				return "Erro na exclusão!";
+			}
+			$this->conn = null;
+
+		} catch (PDOException $exc){
+			echo "Erro ao excluir. " . $exc->getMessage();
+		}
+
+	}
 }
 ?>

@@ -65,5 +65,24 @@
             echo "Erro ao executar consulta. " . $exc->getMessage();
         }
     }
+
+	function exclusao(){
+		try{
+			$this->conn = new Conectar();
+			$sql =  $this->conn->prepare("DELETE from autoria WHERE cod_livro = ? and cod_autor = ?");
+			@$sql->bindParam(1, $this->getCod_livro(), PDO::PARAM_STR);
+			@$sql->bindParam(2, $this->getCod_autor(), PDO::PARAM_STR);
+			if($sql->execute() == 1){
+				return "Excluído com sucesso!";
+			} else {
+				return "Erro na exclusão!";
+			}
+			$this->conn = null;
+
+		} catch (PDOException $exc){
+			echo "Erro ao excluir. " . $exc->getMessage();
+		}
+
+	}
 }
 ?>

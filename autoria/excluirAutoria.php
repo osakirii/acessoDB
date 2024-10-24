@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta charset = "UTF-8">
-        <title>Excluir Produto</title>
+        <title>Excluir Autoria</title>
     </head>
     <body bgcolor="black">
         <center><font face = "Century Gothic" size = 6 style="color: #a370f0;;"><b><u>Excluir Produto</u></b><br><br><br><font size = 4 style="color: white;">
@@ -13,8 +13,9 @@
         
         <form method="post" action="">
             <fieldset id="a" style="flex-flow: column;">
-                <legend><b>Informe o ID do Produto desejado:</b></legend>
-                <p>ID: <input name="txtid" type="text" size="20" maxlength="5" placeholder="ID do Produto..."></p>
+                <legend><b>Informe o Código do Livro e do Autor desejado:</b></legend>
+                <p>Cod_Livro: <input name="txtcodlivro" type="text" size="20" maxlength="5" placeholder="Código do Livro..."></p>
+                <p>Cod_Autor: <input name="txtcodautor" type="text" size="20" maxlength="5" placeholder="Código do Autor..."></p>
                 <button class="cssbuttons-io-button" name="btnenviar" type="submit">
                 Excluir
                 <div class="icon">
@@ -56,13 +57,14 @@
         <fieldset id="b">
             <legend><b>Resultado:</b></legend>
 
-            <?php 
+            <?php
                 extract($_POST, EXTR_OVERWRITE);
                 if(isset($btnenviar)){
-                    include_once 'modelos/produto.php';
-                    $p = new Produto();
-                    $p->setId($txtid);
-                    echo '<h3>' . $p->exclusao() . '</h3>';
+                    include_once 'modelos/autoria.php';
+                    $a = new Autoria();
+                    $a->setCod_livro($txtcodlivro);
+                    $a->setCod_autor($txtcodautor);
+                    echo '<h3>' . $a->exclusao() . '</h3>';
                 }
             ?>
         </fieldset>
